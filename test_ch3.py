@@ -4,4 +4,11 @@ def look_for_key(main_box):
         box = pile.grab_a_box()
         for item in box:
             if itme.is_a_box():
-                
+
+def look_for_key(box):
+    for item in box:
+        if item.is_a_box(item):
+            look_for_key(item)
+        elif item.is_a_key():
+            print "found the key!"
+    
